@@ -16,6 +16,34 @@
 @prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
 
+dh:Ontology  rdf:type               owl:Ontology ;
+        dcterms:conformsTo          "urn:iso:std:iec:61970-501:draft:ed-2" , "urn:iso:std:iec:61970-401:draft:ed-1" ;
+        dcterms:creator             "ENTSO-E"@en ;
+        dcterms:description         "This vocabulary is describing the document header profile."@en ;
+        dcterms:identifier          "urn:uuid:0693858e-f49d-46c2-805d-1dbb9fd9d90f" ;
+        dcterms:language            "en-GB" ;
+        dcterms:license             "https://www.apache.org/licenses/LICENSE-2.0"@en ;
+        dcterms:modified            "2023-09-28"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:publisher           "ENTSO-E"@en ;
+        dcterms:rightsHolder        "ENTSO-E"@en ;
+        dcterms:title               "Document header vocabulary"@en ;
+        owl:backwardCompatibleWith  <http://iec.ch/TC57/61970-552/ModelDescription/1> ;
+        owl:priorVersion            <https://ap.cim4.eu/DocumentHeader/2.2> ;
+        owl:versionIRI              <https://ap.cim4.eu/DocumentHeader/2.3> ;
+        owl:versionInfo             "2.3.1"@en ;
+        dcat:keyword                "DH" ;
+        dcat:theme                  "vocabulary"@en .
+
+dh:Package_DocDocumentHeaderProfile
+        rdf:type      cims:ClassCategory ;
+        rdfs:comment  "This package contains datatypes used only in the RDFS header." ;
+        rdfs:label    "DocDocumentHeaderProfile"@en .
+
+dh:Package_DocumentHeaderProfile
+        rdf:type      cims:ClassCategory ;
+        rdfs:comment  "The package describes the profile for the extended header." ;
+        rdfs:label    "DocumentHeaderProfile"@en .
+
 adms:versionNotes  rdf:type  rdf:Property ;
         rdfs:comment       "A description of changes between this version and the previous version of the resource." ;
         rdfs:domain        md:Model ;
@@ -484,34 +512,6 @@ dcterms:type  rdf:type        rdf:Property ;
         cims:inverseRoleName  dcterms:Resource4 ;
         cims:multiplicity     cims:M:0..1 ;
         cims:stereotype       "dcterms" .
-
-dh:Ontology  rdf:type               owl:Ontology ;
-        dcterms:conformsTo          "urn:iso:std:iec:61970-501:draft:ed-2" , "urn:iso:std:iec:61970-401:draft:ed-1" ;
-        dcterms:creator             "ENTSO-E"@en ;
-        dcterms:description         "This vocabulary is describing the document header profile."@en ;
-        dcterms:identifier          "urn:uuid:0693858e-f49d-46c2-805d-1dbb9fd9d90f" ;
-        dcterms:language            "en-GB" ;
-        dcterms:license             "https://www.apache.org/licenses/LICENSE-2.0"@en ;
-        dcterms:modified            "2023-09-28"^^<http://www.w3.org/2001/XMLSchema#date> ;
-        dcterms:publisher           "ENTSO-E"@en ;
-        dcterms:rightsHolder        "ENTSO-E"@en ;
-        dcterms:title               "Document header vocabulary"@en ;
-        owl:backwardCompatibleWith  <http://iec.ch/TC57/61970-552/ModelDescription/1> ;
-        owl:priorVersion            <https://ap.cim4.eu/DocumentHeader/2.2> ;
-        owl:versionIRI              <https://ap.cim4.eu/DocumentHeader/2.3> ;
-        owl:versionInfo             "2.3.1"@en ;
-        dcat:keyword                "DH" ;
-        dcat:theme                  "vocabulary"@en .
-
-dh:Package_DocDocumentHeaderProfile
-        rdf:type      cims:ClassCategory ;
-        rdfs:comment  "This package contains datatypes used only in the RDFS header." ;
-        rdfs:label    "DocDocumentHeaderProfile"@en .
-
-dh:Package_DocumentHeaderProfile
-        rdf:type      cims:ClassCategory ;
-        rdfs:comment  "The package describes the profile for the extended header." ;
-        rdfs:label    "DocumentHeaderProfile"@en .
 
 dm:DifferenceModel  rdf:type    rdfs:Class ;
         rdfs:comment            "It represents the difference model header. The content is described by the Model class, the association role forwardDifferences and association role reverseDifferences. Both association roles may have one set of Statements." ;
